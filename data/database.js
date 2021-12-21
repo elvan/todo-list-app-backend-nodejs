@@ -6,10 +6,8 @@ const MongoClient = mongodb.MongoClient;
 let database;
 
 async function initDb() {
-  const client = await MongoClient.connect(
-    `${mongodbConfig.url}/todo-list-app-backend-nodejs`
-  );
-  database = client.db('second-api');
+  const client = await MongoClient.connect(`${mongodbConfig.url}`);
+  database = client.db('todo-list-app-backend-nodejs');
 }
 
 function getDb() {
