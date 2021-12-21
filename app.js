@@ -1,8 +1,13 @@
 const express = require('express');
 
 const db = require('./data/database');
+const todosRoute = require('./routes/todos.routes');
 
 const app = express();
+
+app.use(express.json());
+
+app.use('/todos', todosRoute);
 
 app.use(function (error, req, res, next) {
   res.status(500).json({
